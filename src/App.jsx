@@ -10,6 +10,7 @@ function App() {
   const [currentWord, setCurrentWord] = useState(()=>getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  
   let wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length;
   let isGameLost = wrongGuessCount >= languages.length-1;
   let isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
